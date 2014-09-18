@@ -22,12 +22,14 @@ class CsvReader
 
   def number_of_an_isbn(isbn)
     
-    counter = 0
-    @books_in_stock.each {|book| 
-      if isbn == book.isbn
-    counter = counter + 1 end}
+    #counter = 0
+    #@books_in_stock.each {|book| 
+    # if isbn == book.isbn
+    #counter = counter + 1 end}
 
-    counter
+    @books_in_stock.count {|book| book.isbn == isbn}
+
+    #counter
   end
 
   def search(max)
