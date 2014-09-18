@@ -27,7 +27,7 @@ class CsvReader
     # if isbn == book.isbn
     #counter = counter + 1 end}
 
-    @books_in_stock.count {|book| book.isbn == isbn}
+    @books_in_stock.count {|book| book.isbn == isbn} # returns the number of books that meet the condition
 
     #counter
   end
@@ -36,11 +36,12 @@ class CsvReader
 
     list = []
 
-    @books_in_stock.each {|book|
-      if book.price <= max
-        list << book end}
+    #@books_in_stock.each {|book|
+     # if book.price <= max
+      #  list << book end}
 
-        list
+       # list
 
+    @books_in_stock.select {|book| book.price <= max}
   end
 end 
