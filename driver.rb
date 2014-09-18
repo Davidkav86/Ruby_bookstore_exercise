@@ -14,3 +14,9 @@ print "Enter an ISBN ? "
 # standard input (the keyboard) 
 isbn = STDIN.gets.chomp 
 puts "ISBN: #{isbn} ; Copies: #{reader.number_of_an_isbn(isbn)}."
+
+print "Price limit (e.g. 12.99)? " 
+# to_f converts a string to a float, e.g. "12.99".to_f  
+max = STDIN.gets.chomp.to_f 
+cheaper_books = reader.search(max)
+cheaper_books.each {|book| puts book.isbn}

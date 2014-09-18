@@ -28,7 +28,17 @@ class CsvReader
     counter = counter + 1 end}
 
     counter
+  end
 
-    
+  def search(max)
+
+    list = []
+
+    @books_in_stock.each {|book|
+      if book.price <= max
+        list << book end}
+
+        list
+
   end
 end 
